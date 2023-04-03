@@ -93,7 +93,7 @@ def gaussian_elimination(original_matrix : np.array):
             matrix[[i]] = matrix[[i]] - \
                 (matrix[(i, j)] / matrix[(pivots[j][0], pivots[j][1])]) * matrix[[j]]
         matrix[[j]] = (1 / matrix[(pivots[j][0], pivots[j][1])]) * matrix[[j]]
-    return matrix
+    return matrix.T[matrix.shape[1] - 1]
 
 def determinant(matrix):
     det = matrix[(0,0)]
